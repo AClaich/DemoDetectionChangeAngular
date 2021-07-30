@@ -1,0 +1,27 @@
+mat-card{
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: inline-block;
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+}
+
+button{
+  display: list-item;
+}
+.something{
+  margin: 50px;
+}
+
+h3{
+  color: black;
+}
+
+mat-button-toggle-group {
+  display: flex;
+  margin: 15px 15px 15px 15px;
+  width: fit-content;
+  height: fit-content;
+}

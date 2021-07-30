@@ -1,0 +1,46 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "http://localhost:4201",
+      "webRoot": "${workspaceFolder}",
+      "runtimeArgs": [
+        "--disable-web-security",
+        "--user-data-dir=c:\\temp"
+      ]
+    },
+    {
+      "type": "edge",
+      "request": "launch",
+      "name": "Launch Edge",
+      "url": "http://localhost:4201",
+      "webRoot": "${workspaceFolder}",
+      "runtimeArgs": [
+        "--disable-web-security",
+        "--user-data-dir=c:\\temp"
+      ]
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Debug Unit Tests",
+      "url": "http://localhost:9876/debug.html",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "sourceMapPathOverrides": {
+        "webpack:/*": "${webRoot}/*",
+        "/./*": "${webRoot}/*",
+        "/src/*": "${webRoot}/*",
+        "./*": "${webRoot}/*",
+        "_karma_webpack_/*": "${webRoot}/*",
+        "/./~/*": "${workspaceFolder}/node_modules/*"
+      }
+    }
+  ]
+}

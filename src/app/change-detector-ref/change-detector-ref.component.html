@@ -1,0 +1,20 @@
+<h2>Demo</h2>
+<!-- <p>{{ check() }}</p> -->
+<br>
+
+<mat-button-toggle-group
+ appearance="legacy" name="fontStyle"
+ aria-label="Font Style" [(ngModel)]="action">
+  <mat-button-toggle value="Standard">Standard</mat-button-toggle>
+  <mat-button-toggle value="DetachRef">Detach Ref</mat-button-toggle>
+  <mat-button-toggle value="NgZone">Ng Zone</mat-button-toggle>
+  <mat-button-toggle value="Ghost">Ghost</mat-button-toggle>
+</mat-button-toggle-group>
+
+<app-detector-standard *ngIf="action === 'Standard'"></app-detector-standard>
+
+<app-detector-onpush *ngIf="action === 'DetachRef'"></app-detector-onpush>
+
+<app-ng-zone *ngIf="action === 'NgZone'"></app-ng-zone>
+
+<app-ghost-ref *ngIf="action === 'Ghost'"></app-ghost-ref>

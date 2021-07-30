@@ -1,0 +1,35 @@
+<h2>Demo</h2>
+<p>{{ check() }}</p>
+
+<br>
+
+<mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" [(ngModel)]="action">
+  <mat-button-toggle value='SimpleObject'>Simple Object</mat-button-toggle>
+  <mat-button-toggle value='SuscribeObservable'>Suscribe/Observable</mat-button-toggle>
+</mat-button-toggle-group>
+
+<mat-card *ngIf="action === 'SimpleObject'">
+  <h3>Change only the "color" of the object</h3>
+  <app-ghost [ghostModel]="ghosts[0]"></app-ghost>
+  <button mat-raised-button color="primary" (click)="changeColor(ghosts[0].id)">Change color</button>
+</mat-card>
+
+<mat-card *ngIf="action === 'SimpleObject'">
+  <h3>Change the whole object</h3>
+  <app-ghost [ghostModel]="ghosts[1]"></app-ghost>
+  <button mat-raised-button color="primary" (click)="changeObject(ghosts[1].id)">Change color</button>
+</mat-card>
+
+<mat-card  *ngIf="action === 'SuscribeObservable'">
+  <h3>Use a subscribe</h3>
+  <app-ghost [ghostModel]="ghosts[0]"></app-ghost>
+  <button mat-raised-button color="primary" (click)="changeColorSubscribe(ghosts[0].color)">Change color</button>
+</mat-card>
+
+<mat-card  *ngIf="action === 'SuscribeObservable' && (color$ | async) as c">
+  <h3>Use an observable</h3>
+  <app-ghost  [color]="c"></app-ghost>
+  <button mat-raised-button color="primary" (click)="changeColorObservable(c)">Change color</button>
+</mat-card>
+
+<button mat-mini-fab color="primary" matTooltip="Do Something" class="something" (click)="something()"><mat-icon>help</mat-icon></button>
