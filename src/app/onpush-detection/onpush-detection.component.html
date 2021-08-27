@@ -4,7 +4,7 @@
 
 <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" [(ngModel)]="action">
   <mat-button-toggle value='SimpleObject'>Simple Object</mat-button-toggle>
-  <mat-button-toggle value='SuscribeObservable'>Suscribe/Observable</mat-button-toggle>
+  <mat-button-toggle value='SubscribeObservable'>Subscribe/Observable</mat-button-toggle>
 </mat-button-toggle-group>
 
 <mat-card *ngIf="action === 'SimpleObject'">
@@ -19,13 +19,13 @@
   <button mat-raised-button color="primary" (click)="changeObject(ghosts[1].id)">Change color</button>
 </mat-card>
 
-<mat-card *ngIf="action === 'SuscribeObservable'">
+<mat-card *ngIf="action === 'SubscribeObservable'">
   <h3>Use a subscribe</h3>
   <app-ghost-onpush [ghostModel]="ghosts[0]"></app-ghost-onpush>
   <button mat-raised-button color="primary" (click)="changeColorSubscribe(ghosts[0].color)">Change color</button>
 </mat-card>
 
-<mat-card *ngIf="action === 'SuscribeObservable' && (color$ | async) as c">
+<mat-card *ngIf="action === 'SubscribeObservable' && (color$ | async) as c">
   <h3>Use an observable</h3>
   <app-ghost-onpush  [color]="c"></app-ghost-onpush>
   <button mat-raised-button color="primary" (click)="changeColorObservable(c)">Change color</button>

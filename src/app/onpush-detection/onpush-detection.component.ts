@@ -1,6 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { ColorService } from '../services/color.service';
 import { GhostModel } from '../standard-detection/standard-detection.component';
 
@@ -32,7 +31,7 @@ export class OnpushDetectionComponent implements OnInit, OnDestroy{
   }
 
   public check() {
-    console.log('standard-detection component view checked');
+    console.log('onpush-detection component view checked');
   }
 
   public changeColor(id : number) {
